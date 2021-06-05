@@ -1,8 +1,14 @@
 import "./App.css";
-import Dummy from "dummy/Dummy";
+import Button from "components/atom/Button";
 
 function App() {
-  return <Dummy />;
+  return (
+    <div id="main">
+      <Button value="이전" className="navigation-button" />
+      <div id="section"></div>
+      <Button value="다음" className="navigation-button" />
+    </div>
+  );
 }
 
 export default App;
