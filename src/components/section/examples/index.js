@@ -4,6 +4,7 @@ import Example3 from "components/section/examples/example3";
 import Example4 from "components/section/examples/example4";
 import Example5 from "components/section/examples/example5";
 import Example6 from "components/section/examples/example6";
+import Example7 from "components/section/examples/example7";
 
 function Example({ page }) {
   switch (page) {
@@ -19,6 +20,8 @@ function Example({ page }) {
       return <Example5 />;
     case 5:
       return <Example6 />;
+    case 6:
+      return <Example7 />;
     default:
       return <div />;
   }
