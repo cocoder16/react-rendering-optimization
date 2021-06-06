@@ -1,23 +1,8 @@
-import { useState } from "react";
-
-import UserItem from "components/section/examples/example1/UserItem";
+import UserItem from "components/section/examples/example2/UserItem";
 import Button from "components/atom/Button";
 
-function UserList() {
+function UserList({ users, setUsers }) {
   console.log("UserList component rerender");
-
-  const [users, setUsers] = useState([
-    {
-      id: 0,
-      name: "Kim",
-      age: 27,
-    },
-    {
-      id: 1,
-      name: "Jo",
-      age: 25,
-    },
-  ]);
 
   const addUser = () => {
     setUsers([
