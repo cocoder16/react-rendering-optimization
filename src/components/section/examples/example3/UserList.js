@@ -2,7 +2,7 @@ import UserItem from "components/section/examples/example3/UserItem";
 import Button from "components/atom/Button";
 
 function UserList({ users, setUsers }) {
-  console.log("UserList component rerender");
+  console.log("UserList component render");
 
   const addUser = () => {
     setUsers([

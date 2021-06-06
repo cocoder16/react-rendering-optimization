@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import UserItem from "components/section/examples/example1/UserItem";
+import UserItem from "components/section/examples/example5/UserItem";
 import Button from "components/atom/Button";
 
 function UserList() {
@@ -11,11 +11,13 @@ function UserList() {
       id: 0,
       name: "Kim",
       age: 27,
+      score: 80,
     },
     {
       id: 1,
       name: "Jo",
       age: 25,
+      score: 70,
     },
   ]);
 
@@ -26,6 +28,7 @@ function UserList() {
         id: 2,
         name: "Jung",
         age: 30,
+        score: 90,
       },
     ]);
   };
@@ -38,14 +41,7 @@ function UserList() {
         onClick={addUser}
       />
       {users.map(user => {
-        return (
-          <UserItem
-            key={user.id}
-            id={user.id}
-            name={user.name}
-            age={user.age}
-          />
-        );
+        return <UserItem key={user.id} user={user} />;
       })}
     </div>
   );

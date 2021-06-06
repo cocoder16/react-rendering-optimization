@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function Group() {
-  console.log("Group component rerender");
+  console.log("Group component render");
 
   const [name] = useState("coco");
   const [description] = useState("rendering optimization pracitice");

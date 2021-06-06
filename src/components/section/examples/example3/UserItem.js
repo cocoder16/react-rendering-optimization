@@ -1,5 +1,5 @@
 function UserItem({ id, name, age }) {
-  console.log(`UserItem (id: ${id}) component rerender`);
+  console.log(`UserItem (id: ${id}) component render`);
 
   return (
     <div className="user-item">

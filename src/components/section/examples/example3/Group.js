@@ -1,5 +1,5 @@
 function Group({ group }) {
-  console.log("Group component rerender");
+  console.log("Group component render");
 
   return (
     <div>
