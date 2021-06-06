@@ -115,8 +115,23 @@ const pages = [
   }),
   new Page({
     title:
-      "7. state를 이용해 새로 정제하여 만든 데이터를 props로 전달하는 경우입니다.",
-    explanation: [""],
+      "7. state를 이용해 새로 정제하여 만든 객체를 props로 전달하는 것은 하지 말아야 합니다.",
+    explanation: [
+      "이번에는 UserList에서 getResult 함수를 통해 { grade, comment } 객체를 구해 UserItem의 props로 넘겨주고 있습니다.",
+      "그 덕에 UserList가 리렌더링 될 때마다 객체 리터럴로 새 객체가 생성되면서 UserItem이 리렌더링 되고 있습니다. (앞서 적용한 모든 렌더링 최적화 기법이 적용되었음에도 말이죠)",
+      "grade, comment는 score에 의존적인 값이므로 굳이 state로 따로 선언해줄 필요는 없습니다. 하지만 그렇다고 UserList가 리렌더링 될 때마다 매번 새로 객체를 생성하는 것도 안좋아 보입니다.",
+      "개발자 도구 콘솔창을 키고 input에 아무 내용이나 타이핑을 해보세요.",
+    ],
+  }),
+  new Page({
+    title:
+      "7. state를 이용해 새로 정제하여 만든 객체를 props로 전달하는 것은 하지 말아야 합니다.",
+    explanation: [
+      "해결책은 grade와 comment를 구하는 함수는 useCallback을 이용해 UserItem의 props로 전달하거나 UserItem내부에서 선언해주고, score만 props로 정확히 전달해주는 것입니다.",
+      "이 예제의 경우 getResult는 UserItem에서만 사용하는 함수이므로 UserItem에서 선언해 사용하겠습니다.",
+      "정확히는 UserItem.js에서 UserItem컴포넌트 밖에 선언하려고 합니다. 이렇게 하면 UserItem에서 해당 함수를 참조할 수 있으면서, UserItem이 리렌더링할 때마다 해당 함수를 재생성하는 것도 막을 수 있습니다.",
+      "개발자 도구 콘솔창을 키고 input에 아무 내용이나 타이핑을 해보세요.",
+    ],
   }),
 ];
 
