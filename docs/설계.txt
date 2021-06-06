@@ -37,6 +37,8 @@ state = {
   }]
 }
 
+그런데 이렇게하고 보니 이 예제는 복잡하지 않아 state를 하위에 선언해도 됨.
+
 7. 매핑시 key값으로 index 넣는 것 피하기
 
 StudentList - StudentItem

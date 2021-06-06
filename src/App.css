@@ -26,3 +26,7 @@
   background-color: #f8f9fa;
   border-bottom: 2px solid #ddd;
 }
+
+.user-item {
+  border-bottom: 2px solid #dedede;
+}
