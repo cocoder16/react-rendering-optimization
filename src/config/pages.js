@@ -72,9 +72,51 @@ const pages = [
     ],
   }),
   new Page({
+    title: "5. useMemo를 이용한 렌더링 최적화",
+    explanation: [
+      "이번에는 유저들의 평균을 계산해서 보여주고 있습니다.",
+      "이것은 간단한 예제이므로 사실 평균을 구하는데에는 그리 오랜 시간이 걸리지 않지만, 실제로 이 평균값을 구하는 연산이 엄청 오랜 시간이 걸린다고 가정해봅시다.",
+      "개발자 도구 콘솔창을 키고 input에 아무 내용이나 타이핑을 해보세요. 컴포넌트가 리렌더링 될 때마다 평균을 새로 계산하고 있습니다.",
+    ],
+  }),
+  new Page({
+    title: "5. useMemo를 이용한 렌더링 최적화",
+    explanation: [
+      "useMemo를 이용하면 평균을 구하는 연산을 dependencies에 있는 데이터가 변할 때에만 수행하도록 할 수 있습니다.",
+      "dependencies에 users를 넣어주면, users가 변할 때에만 useMemo안에 있는 함수를 실행하여 평균값을 반환합니다.",
+      "개발자 도구 콘솔창을 키고 input에 아무 내용이나 타이핑을 해보세요. users가 변하지 않으므로 평균을 구하는 useMemo안에 생성함수를 실행하지 않습니다.",
+      '이번에는 "새 유저 생성" 버튼을 눌러보세요. users가 변할 때에만 평균을 구하는 useMemo안에 생성함수를 실행합니다.',
+    ],
+  }),
+  new Page({
+    title: "5. useMemo를 이용한 렌더링 최적화",
+    explanation: [
+      "useMemo를 이용해 불필요한 함수의 실행은 방지했으나, 그럼에도 불구하고 input에 타이핑할 때마다 Average 컴포넌트를 리렌더링했습니다.",
+      "users가 변경되지 않았을 때, Average 컴포넌트의 리렌더링까지 방지하고 싶다면 Average 컴포넌트에 React.memo를 적용하면 됩니다.",
+    ],
+  }),
+  new Page({
+    title: "6. useCallback을 이용한 렌더링 최적화",
+    explanation: [
+      "이번에는 Button 컴포넌트가 리렌더링 될때마다 콘솔창에 기록되도록 하였습니다.",
+      "개발자 도구 콘솔창을 키고 input에 아무 내용이나 타이핑을 해보세요.",
+      "Button 컴포넌트에는 React.memo가 적용되었지만 타이핑할 때마다 리렌더링이 발생하고 있습니다.",
+      "Button 컴포넌트에 props로 전달하는 onClick에 할당되는 addUser라는 함수가 UserList 컴포넌트가 리렌더링될 때마다 재생성되고 있기 때문입니다.",
+    ],
+  }),
+  new Page({
+    title: "6. useCallback을 이용한 렌더링 최적화",
+    explanation: [
+      "addUser함수를 useCallback을 통해 메모이제이션할 수 있습니다. dependencies가 변경될 때에만 함수를 새로 생성합니다.",
+      "개발자 도구 콘솔창을 키고 input에 아무 내용이나 타이핑을 해보세요.",
+      "UserList 컴포넌트가 리렌더링 되어도 addUser 함수는 useCallback으로 인해 재생성되지 않기 때문에 Button컴포넌트에 전달되는 함수는 변경되지 않습니다.",
+      "즉, Button 컴포넌트의 props에는 변화가 없으므로 Button 컴포넌트의 리렌더링은 발생하지 않습니다.",
+    ],
+  }),
+  new Page({
     title:
-      "5. state를 이용해 새로 정제하여 만든 데이터를 props로 전달하는 경우입니다.",
-    explanation: "",
+      "7. state를 이용해 새로 정제하여 만든 데이터를 props로 전달하는 경우입니다.",
+    explanation: [""],
   }),
 ];
 

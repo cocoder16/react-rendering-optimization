@@ -1,4 +1,10 @@
-function Button({ value, className, disabled, onClick }) {
+import React from "react";
+
+function Button({ value, className, disabled, onClick, logRender }) {
+  if (logRender) {
+    console.log("Button component render");
+  }
+
   return (
     <button
       type="button"
@@ -13,4 +19,4 @@ function Button({ value, className, disabled, onClick }) {
   );
 }
 
-export default Button;
+export default React.memo(Button);

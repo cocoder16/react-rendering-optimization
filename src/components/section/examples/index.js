@@ -5,6 +5,11 @@ import Example4 from "components/section/examples/example4";
 import Example5 from "components/section/examples/example5";
 import Example6 from "components/section/examples/example6";
 import Example7 from "components/section/examples/example7";
+import Example8 from "components/section/examples/example8";
+import Example9 from "components/section/examples/example9";
+import Example10 from "components/section/examples/example10";
+import Example11 from "components/section/examples/example11";
+import Example12 from "components/section/examples/example12";
 
 function Example({ page }) {
   switch (page) {
@@ -22,6 +27,16 @@ function Example({ page }) {
       return <Example6 />;
     case 6:
       return <Example7 />;
+    case 7:
+      return <Example8 />;
+    case 8:
+      return <Example9 />;
+    case 9:
+      return <Example10 />;
+    case 10:
+      return <Example11 />;
+    case 11:
+      return <Example12 />;
     default:
       return <div />;
   }

@@ -59,13 +59,12 @@ state = {
 
 state = {
   users: [{
-    name, age, score, grade, comment
+    name, age, score
   }]
 }
 
-위 예제에서 grade를 useMemo값을 사용하는 것
-getGrade 수를 useCallback으로 사용하는 것
-
+위 예제에서 average를 useMemo값을 사용하는 것
+getAverage를 useCallback으로 사용하는 것
 
 6. props에서 매번 객체 생성 주의
 
