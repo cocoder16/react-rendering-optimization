@@ -19,7 +19,7 @@ function App() {
       setPage(Number(page));
     }
   }, [history]);
-  const maxPage = useMemo(() => pages.length, []);
+  const maxPage = useMemo(() => pages.length - 1, []);
 
   return (
     <div id="main">
